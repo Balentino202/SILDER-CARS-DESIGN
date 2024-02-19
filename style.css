@@ -1,0 +1,127 @@
+header {
+    position: relative;
+    height: 100vh;
+  }
+  
+  .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .slider img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .slider img.active {
+    opacity: 1;
+  }
+  
+  .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+  
+  .hamburger {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .bar {
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .bar:first-child {
+    transform-origin: top left;
+  }
+  
+  .bar:last-child {
+    transform-origin: bottom left;
+  }
+  
+  .hamburger.active .bar:first-child {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger.active .bar:last-child {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  .hamburger.active .bar:nth-child(2) {
+    transform: scale(0);
+  }
+  @media screen and (max-width: 768px) {
+    nav {
+      flex-direction: column;
+    }
+    
+    nav ul {
+      margin-top: 2rem;
+    }
+    
+    nav li {
+      margin: 0.5rem;
+    }
+    
+    nav a {
+      font-size: 1.5rem;
+    }
+    nav {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+      }
+      
+      nav.show {
+        transform: translateY(0%);
+        visibility: visible;
+        opacity: 1;
+      }
+      .hamburger {
+        display: flex;
+      }
+  }  
